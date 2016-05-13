@@ -8,16 +8,14 @@
 
 #import "ViewController.h"
 #import "DOPDropDownMenu.h"
-
-#define kDropDownWidth      250.f
-#define kDropDownHeight     40.f
-#define kDropDownYPosition  100.f
-#define kFolderName         @"FilesFolder"
+#import "FileAlert.h"
+#import "PublicStringDefine.h"
 
 @interface ViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate>
 
 @property (strong, nonatomic) NSArray *filesArray;
 @property (strong, nonatomic) DOPDropDownMenu *menu;
+@property (copy, nonatomic) NSString *fileName;
 
 @end
 
@@ -29,6 +27,7 @@
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:kFolderName];
     self.filesArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:filePath error:nil];
     [self setUpDropDownMenu];
+    self.fileName = self.filesArray.firstObject;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +48,7 @@
 }
 
 - (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath {
-
+    self.fileName = self.filesArray[indexPath.row];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -67,6 +66,23 @@
     self.menu.dataSource = self;
     self.menu.delegate = self;
     [self.view addSubview:self.menu];
+}
+
+- (IBAction)showPDF:(id)sender {
+    [self matchExtension:kPDF];
+}
+
+- (IBAction)showPPT:(id)sender {
+    [self matchExtension:kPPT];
+}
+
+- (void)matchExtension:(NSString *)clickedFileType {
+    NSString *extensionName = [self.fileName pathExtension];
+    if (![clickedFileType isEqualToString:extensionName]) {
+        [FileAlert showAlertWithController:self message:@"Selected File Type Mismatch"];
+        return;
+    }
+    //push to next Controller
 }
 
 @end
