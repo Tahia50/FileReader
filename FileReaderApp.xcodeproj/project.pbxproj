@@ -15,6 +15,8 @@
 		CF44ACF91CE2EB3000AAE46E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF44ACF71CE2EB3000AAE46E /* LaunchScreen.storyboard */; };
 		CF44AD041CE2EB3100AAE46E /* FileReaderAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF44AD031CE2EB3100AAE46E /* FileReaderAppTests.m */; };
 		CF44AD0F1CE2EB3100AAE46E /* FileReaderAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF44AD0E1CE2EB3100AAE46E /* FileReaderAppUITests.m */; };
+		CFF0FB871CE4B0BE00704633 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF0FB861CE4B0BE00704633 /* DOPDropDownMenu.m */; };
+		CFF0FB891CE4B10700704633 /* FilesFolder in Resources */ = {isa = PBXBuildFile; fileRef = CFF0FB881CE4B10700704633 /* FilesFolder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		CF44AD0A1CE2EB3100AAE46E /* FileReaderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileReaderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF44AD0E1CE2EB3100AAE46E /* FileReaderAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileReaderAppUITests.m; sourceTree = "<group>"; };
 		CF44AD101CE2EB3100AAE46E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF0FB851CE4B0B400704633 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
+		CFF0FB861CE4B0BE00704633 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
+		CFF0FB881CE4B10700704633 /* FilesFolder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesFolder; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +106,13 @@
 		CF44ACE81CE2EB3000AAE46E /* FileReaderApp */ = {
 			isa = PBXGroup;
 			children = (
+				CFF0FB841CE4B09800704633 /* DOPDropDownMenu */,
 				CF44AD1F1CE2EBDF00AAE46E /* Delegates */,
 				CF44AD1E1CE2EB9000AAE46E /* StoryBoard */,
 				CF44AD1C1CE2EB5A00AAE46E /* Controllers */,
 				CF44ACF51CE2EB3000AAE46E /* Assets.xcassets */,
 				CF44ACFA1CE2EB3000AAE46E /* Info.plist */,
+				CFF0FB881CE4B10700704633 /* FilesFolder */,
 				CF44ACE91CE2EB3000AAE46E /* Supporting Files */,
 			);
 			path = FileReaderApp;
@@ -162,6 +169,15 @@
 				CF44ACED1CE2EB3000AAE46E /* AppDelegate.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		CFF0FB841CE4B09800704633 /* DOPDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CFF0FB851CE4B0B400704633 /* DOPDropDownMenu.h */,
+				CFF0FB861CE4B0BE00704633 /* DOPDropDownMenu.m */,
+			);
+			name = DOPDropDownMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +288,7 @@
 			files = (
 				CF44ACF91CE2EB3000AAE46E /* LaunchScreen.storyboard in Resources */,
 				CF44ACF61CE2EB3000AAE46E /* Assets.xcassets in Resources */,
+				CFF0FB891CE4B10700704633 /* FilesFolder in Resources */,
 				CF44ACF41CE2EB3000AAE46E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF44ACF11CE2EB3000AAE46E /* ViewController.m in Sources */,
+				CFF0FB871CE4B0BE00704633 /* DOPDropDownMenu.m in Sources */,
 				CF44ACEE1CE2EB3000AAE46E /* AppDelegate.m in Sources */,
 				CF44ACEB1CE2EB3000AAE46E /* main.m in Sources */,
 			);
@@ -523,6 +541,7 @@
 				CF44AD151CE2EB3100AAE46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF44AD161CE2EB3100AAE46E /* Build configuration list for PBXNativeTarget "FileReaderAppTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +550,7 @@
 				CF44AD181CE2EB3100AAE46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF44AD191CE2EB3100AAE46E /* Build configuration list for PBXNativeTarget "FileReaderAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +559,7 @@
 				CF44AD1B1CE2EB3100AAE46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
