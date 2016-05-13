@@ -16,7 +16,37 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgP-E7-lsi">
+                                <rect key="frame" x="251" y="519" width="99" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Q3v-6w-b4v"/>
+                                    <constraint firstAttribute="width" constant="99" id="zxI-3N-TEn"/>
+                                </constraints>
+                                <state key="normal" title="Show PPT"/>
+                                <connections>
+                                    <action selector="showPPT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YnH-I9-Vh3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZX-qg-HhN">
+                                <rect key="frame" x="251" y="444" width="99" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="1pr-Vg-ygb"/>
+                                    <constraint firstAttribute="height" constant="46" id="HsE-pG-SzM"/>
+                                </constraints>
+                                <state key="normal" title="Show PDF"/>
+                                <connections>
+                                    <action selector="showPDF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G8r-ch-QjR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sgP-E7-lsi" firstAttribute="top" secondItem="VZX-qg-HhN" secondAttribute="bottom" constant="29" id="3qu-sZ-qDM"/>
+                            <constraint firstItem="sgP-E7-lsi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E0T-a8-Gc7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sgP-E7-lsi" secondAttribute="bottom" constant="35" id="vro-jI-BMx"/>
+                            <constraint firstItem="VZX-qg-HhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yxS-Gx-vdn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wB2-6F-Plr"/>
                 </viewController>
@@ -40,7 +70,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQd-Ut-ycs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="432" y="1097"/>
+            <point key="canvasLocation" x="435" y="511"/>
         </scene>
     </scenes>
 </document>
