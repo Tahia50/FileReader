@@ -15,6 +15,7 @@
 		CF44ACF91CE2EB3000AAE46E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF44ACF71CE2EB3000AAE46E /* LaunchScreen.storyboard */; };
 		CF44AD041CE2EB3100AAE46E /* FileReaderAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF44AD031CE2EB3100AAE46E /* FileReaderAppTests.m */; };
 		CF44AD0F1CE2EB3100AAE46E /* FileReaderAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF44AD0E1CE2EB3100AAE46E /* FileReaderAppUITests.m */; };
+		CF4A11621CE5A83000AF71B4 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4A11611CE5A83000AF71B4 /* QuickLook.framework */; };
 		CFCE042A1CE59D0C00508003 /* FileAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCE04291CE59D0C00508003 /* FileAlert.m */; };
 		CFF0FB871CE4B0BE00704633 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF0FB861CE4B0BE00704633 /* DOPDropDownMenu.m */; };
 		CFF0FB891CE4B10700704633 /* FilesFolder in Resources */ = {isa = PBXBuildFile; fileRef = CFF0FB881CE4B10700704633 /* FilesFolder */; };
@@ -54,6 +55,7 @@
 		CF44AD0A1CE2EB3100AAE46E /* FileReaderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileReaderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF44AD0E1CE2EB3100AAE46E /* FileReaderAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileReaderAppUITests.m; sourceTree = "<group>"; };
 		CF44AD101CE2EB3100AAE46E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF4A11611CE5A83000AF71B4 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		CFCE04281CE59D0400508003 /* FileAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileAlert.h; sourceTree = "<group>"; };
 		CFCE04291CE59D0C00508003 /* FileAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileAlert.m; sourceTree = "<group>"; };
 		CFCE042B1CE5A35A00508003 /* PublicStringDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicStringDefine.h; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4A11621CE5A83000AF71B4 /* QuickLook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +93,7 @@
 		CF44ACDD1CE2EB3000AAE46E = {
 			isa = PBXGroup;
 			children = (
+				CF4A11611CE5A83000AF71B4 /* QuickLook.framework */,
 				CF44ACE81CE2EB3000AAE46E /* FileReaderApp */,
 				CF44AD021CE2EB3100AAE46E /* FileReaderAppTests */,
 				CF44AD0D1CE2EB3100AAE46E /* FileReaderAppUITests */,
