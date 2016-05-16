@@ -16,8 +16,12 @@
 		CF44AD041CE2EB3100AAE46E /* FileReaderAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF44AD031CE2EB3100AAE46E /* FileReaderAppTests.m */; };
 		CF44AD0F1CE2EB3100AAE46E /* FileReaderAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF44AD0E1CE2EB3100AAE46E /* FileReaderAppUITests.m */; };
 		CF4A11621CE5A83000AF71B4 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4A11611CE5A83000AF71B4 /* QuickLook.framework */; };
+		CF666F2A1CE96F0A00B10FCB /* DropDownListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF666F291CE96F0A00B10FCB /* DropDownListView.m */; };
+		CF666F2D1CE96F2600B10FCB /* DropDownViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF666F2C1CE96F2600B10FCB /* DropDownViewCell.m */; };
+		CF666F2F1CE96F3000B10FCB /* check_mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF666F2E1CE96F3000B10FCB /* check_mark@2x.png */; };
+		CF666F311CE96F3800B10FCB /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF666F301CE96F3800B10FCB /* done@2x.png */; };
+		CF666F331CE96F3F00B10FCB /* drop_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF666F321CE96F3F00B10FCB /* drop_down@2x.png */; };
 		CFCE042A1CE59D0C00508003 /* FileAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCE04291CE59D0C00508003 /* FileAlert.m */; };
-		CFF0FB871CE4B0BE00704633 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF0FB861CE4B0BE00704633 /* DOPDropDownMenu.m */; };
 		CFF0FB891CE4B10700704633 /* FilesFolder in Resources */ = {isa = PBXBuildFile; fileRef = CFF0FB881CE4B10700704633 /* FilesFolder */; };
 /* End PBXBuildFile section */
 
@@ -56,11 +60,16 @@
 		CF44AD0E1CE2EB3100AAE46E /* FileReaderAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileReaderAppUITests.m; sourceTree = "<group>"; };
 		CF44AD101CE2EB3100AAE46E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF4A11611CE5A83000AF71B4 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		CF666F281CE96F0300B10FCB /* DropDownListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropDownListView.h; sourceTree = "<group>"; };
+		CF666F291CE96F0A00B10FCB /* DropDownListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownListView.m; sourceTree = "<group>"; };
+		CF666F2B1CE96F1000B10FCB /* DropDownViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropDownViewCell.h; sourceTree = "<group>"; };
+		CF666F2C1CE96F2600B10FCB /* DropDownViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownViewCell.m; sourceTree = "<group>"; };
+		CF666F2E1CE96F3000B10FCB /* check_mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_mark@2x.png"; sourceTree = "<group>"; };
+		CF666F301CE96F3800B10FCB /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done@2x.png"; sourceTree = "<group>"; };
+		CF666F321CE96F3F00B10FCB /* drop_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drop_down@2x.png"; sourceTree = "<group>"; };
 		CFCE04281CE59D0400508003 /* FileAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileAlert.h; sourceTree = "<group>"; };
 		CFCE04291CE59D0C00508003 /* FileAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileAlert.m; sourceTree = "<group>"; };
 		CFCE042B1CE5A35A00508003 /* PublicStringDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicStringDefine.h; sourceTree = "<group>"; };
-		CFF0FB851CE4B0B400704633 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
-		CFF0FB861CE4B0BE00704633 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
 		CFF0FB881CE4B10700704633 /* FilesFolder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FilesFolder; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,11 +188,25 @@
 			name = Delegates;
 			sourceTree = "<group>";
 		};
+		CF666F341CE96F4700B10FCB /* kDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CF666F2E1CE96F3000B10FCB /* check_mark@2x.png */,
+				CF666F301CE96F3800B10FCB /* done@2x.png */,
+				CF666F321CE96F3F00B10FCB /* drop_down@2x.png */,
+				CF666F281CE96F0300B10FCB /* DropDownListView.h */,
+				CF666F291CE96F0A00B10FCB /* DropDownListView.m */,
+				CF666F2B1CE96F1000B10FCB /* DropDownViewCell.h */,
+				CF666F2C1CE96F2600B10FCB /* DropDownViewCell.m */,
+			);
+			name = kDropDownMenu;
+			sourceTree = "<group>";
+		};
 		CFCE04261CE59CB000508003 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				CF666F341CE96F4700B10FCB /* kDropDownMenu */,
 				CFCE04271CE59CC200508003 /* FileAlert */,
-				CFF0FB841CE4B09800704633 /* DOPDropDownMenu */,
 				CFCE042B1CE5A35A00508003 /* PublicStringDefine.h */,
 			);
 			name = Libs;
@@ -196,15 +219,6 @@
 				CFCE04291CE59D0C00508003 /* FileAlert.m */,
 			);
 			name = FileAlert;
-			sourceTree = "<group>";
-		};
-		CFF0FB841CE4B09800704633 /* DOPDropDownMenu */ = {
-			isa = PBXGroup;
-			children = (
-				CFF0FB851CE4B0B400704633 /* DOPDropDownMenu.h */,
-				CFF0FB861CE4B0BE00704633 /* DOPDropDownMenu.m */,
-			);
-			name = DOPDropDownMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +329,10 @@
 			files = (
 				CF44ACF91CE2EB3000AAE46E /* LaunchScreen.storyboard in Resources */,
 				CF44ACF61CE2EB3000AAE46E /* Assets.xcassets in Resources */,
+				CF666F2F1CE96F3000B10FCB /* check_mark@2x.png in Resources */,
 				CFF0FB891CE4B10700704633 /* FilesFolder in Resources */,
+				CF666F311CE96F3800B10FCB /* done@2x.png in Resources */,
+				CF666F331CE96F3F00B10FCB /* drop_down@2x.png in Resources */,
 				CF44ACF41CE2EB3000AAE46E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,9 +359,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF44ACF11CE2EB3000AAE46E /* ViewController.m in Sources */,
-				CFF0FB871CE4B0BE00704633 /* DOPDropDownMenu.m in Sources */,
+				CF666F2D1CE96F2600B10FCB /* DropDownViewCell.m in Sources */,
 				CF44ACEE1CE2EB3000AAE46E /* AppDelegate.m in Sources */,
 				CFCE042A1CE59D0C00508003 /* FileAlert.m in Sources */,
+				CF666F2A1CE96F0A00B10FCB /* DropDownListView.m in Sources */,
 				CF44ACEB1CE2EB3000AAE46E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
