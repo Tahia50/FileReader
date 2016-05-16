@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,68 +18,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgP-E7-lsi">
-                                <rect key="frame" x="228" y="440" width="144" height="46"/>
-                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fce-IL-T79">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyI-TL-kXx">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fos-Xm-8St">
+                                                <rect key="frame" x="240" y="216" width="120" height="40"/>
+                                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="m2n-Zj-pFQ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="wAc-pW-Qqw"/>
+                                                </constraints>
+                                                <state key="normal" title="Show PDF">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showPDF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pRF-Yt-u99"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLI-yr-22f">
+                                                <rect key="frame" x="240" y="318" width="120" height="40"/>
+                                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="O9R-EQ-5jB"/>
+                                                    <constraint firstAttribute="width" constant="120" id="hdG-sE-KYd"/>
+                                                </constraints>
+                                                <state key="normal" title="Show PPT">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showPPT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPt-Xz-zG5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VS-9C-zRf">
+                                                <rect key="frame" x="140" y="2" width="320" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="8Uy-ZU-pb6"/>
+                                                    <constraint firstAttribute="width" constant="320" id="M4T-fl-EwH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Select File" backgroundImage="drop_down.png">
+                                                    <color key="titleColor" red="0.0" green="0.42352944609999998" blue="0.7607843876" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dropDownButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e45-4s-Lmr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="536" id="EKn-5c-yUO"/>
+                                            <constraint firstItem="fos-Xm-8St" firstAttribute="centerX" secondItem="fyI-TL-kXx" secondAttribute="centerX" id="Z4j-F3-Q6G"/>
+                                            <constraint firstItem="lLI-yr-22f" firstAttribute="centerX" secondItem="fyI-TL-kXx" secondAttribute="centerX" id="ajq-57-D2Y"/>
+                                            <constraint firstItem="lLI-yr-22f" firstAttribute="top" secondItem="fos-Xm-8St" secondAttribute="bottom" constant="62" id="c1X-xY-vO8"/>
+                                            <constraint firstItem="1VS-9C-zRf" firstAttribute="top" secondItem="fyI-TL-kXx" secondAttribute="top" constant="2" id="f1v-Mi-XxD"/>
+                                            <constraint firstAttribute="bottom" secondItem="lLI-yr-22f" secondAttribute="bottom" constant="178" id="jgF-YM-qGB"/>
+                                            <constraint firstItem="1VS-9C-zRf" firstAttribute="centerX" secondItem="fyI-TL-kXx" secondAttribute="centerX" id="uDr-nr-X1q"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="Q3v-6w-b4v"/>
-                                    <constraint firstAttribute="width" constant="144" id="zxI-3N-TEn"/>
+                                    <constraint firstAttribute="trailing" secondItem="fyI-TL-kXx" secondAttribute="trailing" id="1hH-p0-zoQ"/>
+                                    <constraint firstItem="fyI-TL-kXx" firstAttribute="centerX" secondItem="Fce-IL-T79" secondAttribute="centerX" id="6Cf-Nc-Kdd"/>
+                                    <constraint firstItem="fyI-TL-kXx" firstAttribute="centerX" secondItem="Fce-IL-T79" secondAttribute="centerX" id="Fbs-ig-CWB"/>
+                                    <constraint firstItem="fyI-TL-kXx" firstAttribute="leading" secondItem="Fce-IL-T79" secondAttribute="leading" id="TYI-7S-FII"/>
+                                    <constraint firstItem="fyI-TL-kXx" firstAttribute="top" secondItem="Fce-IL-T79" secondAttribute="top" id="hiQ-3j-ak1"/>
+                                    <constraint firstAttribute="bottom" secondItem="fyI-TL-kXx" secondAttribute="bottom" id="xqq-l2-33v"/>
                                 </constraints>
-                                <state key="normal" title="Show PPT">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="showPPT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YnH-I9-Vh3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pql-T7-5ZF">
-                                <rect key="frame" x="125" y="132" width="350" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="dVB-Pg-QvB"/>
-                                    <constraint firstAttribute="width" constant="350" id="dYg-wm-2A2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Select File" backgroundImage="drop_down.png">
-                                    <color key="titleColor" red="0.0" green="0.42352944609999998" blue="0.7607843876" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dropDownButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmS-mD-PAT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZX-qg-HhN">
-                                <rect key="frame" x="228" y="337" width="144" height="46"/>
-                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="144" id="1pr-Vg-ygb"/>
-                                    <constraint firstAttribute="height" constant="46" id="HsE-pG-SzM"/>
-                                </constraints>
-                                <state key="normal" title="Show PDF">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="showPDF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G8r-ch-QjR"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sgP-E7-lsi" firstAttribute="top" secondItem="VZX-qg-HhN" secondAttribute="bottom" constant="57" id="3qu-sZ-qDM"/>
-                            <constraint firstItem="sgP-E7-lsi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E0T-a8-Gc7"/>
-                            <constraint firstItem="pql-T7-5ZF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="68" id="Voq-Mm-WDo"/>
-                            <constraint firstItem="pql-T7-5ZF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r5g-BB-dY4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sgP-E7-lsi" secondAttribute="bottom" constant="114" id="vro-jI-BMx"/>
-                            <constraint firstItem="VZX-qg-HhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yxS-Gx-vdn"/>
+                            <constraint firstItem="Fce-IL-T79" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Hbx-lq-jZa"/>
+                            <constraint firstItem="Fce-IL-T79" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="64" id="Ll4-zc-zuc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fce-IL-T79" secondAttribute="trailing" constant="-20" id="imc-Ld-ZAr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fce-IL-T79" secondAttribute="bottom" id="ruz-1N-gui"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wB2-6F-Plr"/>
                     <connections>
-                        <outlet property="dropDownButton" destination="pql-T7-5ZF" id="OYT-nN-I8i"/>
+                        <outlet property="containerView" destination="fyI-TL-kXx" id="uwZ-dX-Yew"/>
+                        <outlet property="dropDownButton" destination="1VS-9C-zRf" id="nHI-lM-84w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="437"/>
+            <point key="canvasLocation" x="1260" y="436"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bk0-hP-zlO">
