@@ -9,13 +9,12 @@
 #ifndef PublicStringDefine_h
 #define PublicStringDefine_h
 
-#define kDropDownWidth      250.f
-#define kDropDownHeight     40.f
-#define kDropDownYPosition  100.f
+#define kDropDownWidth      350.f
+#define kDropDownHeight     280.f
+#define kDropDownTitle      @"File List"
 #define kFolderName         @"FilesFolder"
 #define kPDF                @"pdf"
 #define kPPT                @"ppt"
-#define kStartIndex         0
 #define kErrorMessage       @"Selected File Type Mismatch"
 
 #endif /* PublicStringDefine_h */

@@ -8,15 +8,16 @@
 
 #import <QuickLook/QuickLook.h>
 #import "ViewController.h"
-#import "DOPDropDownMenu.h"
+#import "DropDownListView.h"
 #import "FileAlert.h"
 #import "PublicStringDefine.h"
 
-@interface ViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource>
+@interface ViewController ()<kDropDownListViewDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource>
 
 @property (strong, nonatomic) NSArray *filesArray;
-@property (strong, nonatomic) DOPDropDownMenu *menu;
+@property (strong, nonatomic) DropDownListView *menu;
 @property (strong, nonatomic) NSString *fileName;
+@property (weak, nonatomic) IBOutlet UIButton *dropDownButton;
 @property (assign, nonatomic) NSInteger menuIndex;
 
 @end
@@ -28,9 +29,8 @@
     self.navigationItem.title = @"FileReader";
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:kFolderName];
     self.filesArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:filePath error:nil];
-    [self setUpDropDownMenu];
-    self.menuIndex = kStartIndex;
     self.fileName = self.filesArray.firstObject;
+    [self.dropDownButton setTitle:self.fileName forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,38 +38,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu {
-    return 1;
-}
-
-- (NSInteger)menu:(DOPDropDownMenu *)menu numberOfRowsInColumn:(NSInteger)column {
-    return self.filesArray.count;
-}
-
-- (NSString *)menu:(DOPDropDownMenu *)menu titleForRowAtIndexPath:(DOPIndexPath *)indexPath {
-    return self.filesArray[indexPath.row];
-}
-
-- (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath {
-    self.fileName = self.filesArray[indexPath.row];
-    self.menuIndex = indexPath.row;
-}
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     if ([touch view] != self.menu) {
-        [self.menu dismiss];
+        [self.menu fadeOut];
     }
     [super touchesBegan:touches withEvent:event];
-}
-
-- (void)setUpDropDownMenu {
-    CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    self.menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake((screenSize.width - kDropDownWidth) / 2.f, kDropDownYPosition) andHeight:kDropDownHeight];
-    self.menu.backgroundColor = [UIColor whiteColor];
-    self.menu.dataSource = self;
-    self.menu.delegate = self;
-    [self.view addSubview:self.menu];
 }
 
 - (IBAction)showPDF:(id)sender {
@@ -100,6 +74,29 @@
 - (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
     NSArray *fileComponents = [self.filesArray[index] componentsSeparatedByString:@"."];
     return [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:fileComponents.firstObject ofType:fileComponents.lastObject inDirectory:kFolderName]];
+}
+
+- (void)showPopUpWithTitle:(NSString*)popupTitle withOption:(NSArray*)arrOptions xy:(CGPoint)point size:(CGSize)size isMultiple:(BOOL)isMultiple {
+    self.menu = [[DropDownListView alloc] initWithTitle:popupTitle options:arrOptions xy:point size:size isMultiple:isMultiple];
+    self.menu.delegate = self;
+    [self.menu showInView:self.view animated:YES];
+    [self.menu SetBackGroundDropDown_R:0.f G:108.f B:194.f alpha:0.7f];
+}
+
+- (void)DropDownListView:(DropDownListView *)dropdownListView didSelectedIndex:(NSInteger)anIndex {
+    self.fileName = self.filesArray[anIndex];
+    self.menuIndex = anIndex;
+    [self.dropDownButton setTitle:[self.filesArray objectAtIndex:anIndex] forState:UIControlStateNormal];
+}
+
+- (IBAction)dropDownButtonClicked:(id)sender {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    [self.menu fadeOut];
+    [self showPopUpWithTitle:kDropDownTitle
+                  withOption:self.filesArray
+                          xy:CGPointMake((screenSize.width - kDropDownWidth) / 2, self.dropDownButton.frame.origin.y + self.dropDownButton.frame.size.height)
+                        size:CGSizeMake(kDropDownWidth, kDropDownHeight)
+                  isMultiple:NO];
 }
 
 @end

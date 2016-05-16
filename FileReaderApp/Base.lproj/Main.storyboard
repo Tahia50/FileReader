@@ -18,23 +18,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgP-E7-lsi">
-                                <rect key="frame" x="251" y="519" width="99" height="46"/>
+                                <rect key="frame" x="228" y="440" width="144" height="46"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Q3v-6w-b4v"/>
-                                    <constraint firstAttribute="width" constant="99" id="zxI-3N-TEn"/>
+                                    <constraint firstAttribute="width" constant="144" id="zxI-3N-TEn"/>
                                 </constraints>
-                                <state key="normal" title="Show PPT"/>
+                                <state key="normal" title="Show PPT">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="showPPT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YnH-I9-Vh3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZX-qg-HhN">
-                                <rect key="frame" x="251" y="444" width="99" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pql-T7-5ZF">
+                                <rect key="frame" x="125" y="132" width="350" height="27"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="1pr-Vg-ygb"/>
+                                    <constraint firstAttribute="height" constant="27" id="dVB-Pg-QvB"/>
+                                    <constraint firstAttribute="width" constant="350" id="dYg-wm-2A2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Select File" backgroundImage="drop_down.png">
+                                    <color key="titleColor" red="0.0" green="0.42352944609999998" blue="0.7607843876" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dropDownButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmS-mD-PAT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZX-qg-HhN">
+                                <rect key="frame" x="228" y="337" width="144" height="46"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="1pr-Vg-ygb"/>
                                     <constraint firstAttribute="height" constant="46" id="HsE-pG-SzM"/>
                                 </constraints>
-                                <state key="normal" title="Show PDF"/>
+                                <state key="normal" title="Show PDF">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="showPDF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G8r-ch-QjR"/>
                                 </connections>
@@ -42,13 +63,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sgP-E7-lsi" firstAttribute="top" secondItem="VZX-qg-HhN" secondAttribute="bottom" constant="29" id="3qu-sZ-qDM"/>
+                            <constraint firstItem="sgP-E7-lsi" firstAttribute="top" secondItem="VZX-qg-HhN" secondAttribute="bottom" constant="57" id="3qu-sZ-qDM"/>
                             <constraint firstItem="sgP-E7-lsi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E0T-a8-Gc7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sgP-E7-lsi" secondAttribute="bottom" constant="35" id="vro-jI-BMx"/>
+                            <constraint firstItem="pql-T7-5ZF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="68" id="Voq-Mm-WDo"/>
+                            <constraint firstItem="pql-T7-5ZF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r5g-BB-dY4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sgP-E7-lsi" secondAttribute="bottom" constant="114" id="vro-jI-BMx"/>
                             <constraint firstItem="VZX-qg-HhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yxS-Gx-vdn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wB2-6F-Plr"/>
+                    <connections>
+                        <outlet property="dropDownButton" destination="pql-T7-5ZF" id="OYT-nN-I8i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,4 +99,7 @@
             <point key="canvasLocation" x="435" y="511"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="drop_down.png" width="287" height="28"/>
+    </resources>
 </document>
