@@ -15,5 +15,7 @@
 #define kFolderName         @"FilesFolder"
 #define kPDF                @"pdf"
 #define kPPT                @"ppt"
+#define kStartIndex         0
+#define kErrorMessage       @"Selected File Type Mismatch"
 
 #endif /* PublicStringDefine_h */

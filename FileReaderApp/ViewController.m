@@ -6,16 +6,18 @@
 //  Copyright © 2016 Tahia Ata. All rights reserved.
 //
 
+#import <QuickLook/QuickLook.h>
 #import "ViewController.h"
 #import "DOPDropDownMenu.h"
 #import "FileAlert.h"
 #import "PublicStringDefine.h"
 
-@interface ViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate>
+@interface ViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource>
 
 @property (strong, nonatomic) NSArray *filesArray;
 @property (strong, nonatomic) DOPDropDownMenu *menu;
-@property (copy, nonatomic) NSString *fileName;
+@property (strong, nonatomic) NSString *fileName;
+@property (assign, nonatomic) NSInteger menuIndex;
 
 @end
 
@@ -27,6 +29,7 @@
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:kFolderName];
     self.filesArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:filePath error:nil];
     [self setUpDropDownMenu];
+    self.menuIndex = kStartIndex;
     self.fileName = self.filesArray.firstObject;
 }
 
@@ -49,6 +52,7 @@
 
 - (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath {
     self.fileName = self.filesArray[indexPath.row];
+    self.menuIndex = indexPath.row;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -79,10 +83,23 @@
 - (void)matchExtension:(NSString *)clickedFileType {
     NSString *extensionName = [self.fileName pathExtension];
     if (![clickedFileType isEqualToString:extensionName]) {
-        [FileAlert showAlertWithController:self message:@"Selected File Type Mismatch"];
+        [FileAlert showAlertWithController:self message:kErrorMessage];
         return;
     }
-    //push to next Controller
+    QLPreviewController *preview = [[QLPreviewController alloc] init];
+    preview.dataSource = self;
+    preview.delegate = self;
+    preview.currentPreviewItemIndex = self.menuIndex;
+    [self.navigationController pushViewController:preview animated:YES];
+}
+
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
+    return self.filesArray.count;
+}
+
+- (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
+    NSArray *fileComponents = [self.filesArray[index] componentsSeparatedByString:@"."];
+    return [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:fileComponents.firstObject ofType:fileComponents.lastObject inDirectory:kFolderName]];
 }
 
 @end
